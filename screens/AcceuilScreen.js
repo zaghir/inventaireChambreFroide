@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
 
-export default function AcceuilSreen({ navigation  }) {
+export default function AcceuilScreen({ navigation  }) {
 
-  navigation.setOptions({ headerTitle: 'Acceuil' });
+  // navigation.setOptions({ headerTitle: 'Acceuil' });
 
   return (
     <View>

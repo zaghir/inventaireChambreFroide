@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function NiveauSreen({ navigation, route  }) {
 
-  navigation.setOptions({ headerTitle: 'Niveau' });
+  // navigation.setOptions({ headerTitle: 'Niveau' });
   
   const { depot, allee, rayon } = route.params;
           
@@ -39,6 +39,14 @@ export default function NiveauSreen({ navigation, route  }) {
     );
   };
   
+  onSuivant = () => {
+    if (value === null || value === '') {
+      return;
+    }
+    console.log('Niveau ===>', value);
+    navigation.navigate('ListeArticleScreen', { depot, allee, rayon, niveau: value });
+  }
+
   return (
     <View >
       <Text>Vous etes sur </Text>
@@ -67,7 +75,7 @@ export default function NiveauSreen({ navigation, route  }) {
         )}
         renderItem={renderItem}
       />
-      <Button title="Suivant" onPress={() => navigation.navigate('ListeArticleScreen', { depot, allee, rayon, niveau: value })} />
+      <Button title="Suivant" onPress={() => onSuivant()} />
     </View>
   );
 }

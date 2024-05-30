@@ -109,3 +109,7 @@ npx expo install @react-native-picker/picker
 
 https://www.npmjs.com/package/react-native-element-dropdown
 npm i react-native-element-dropdown --save
+
+https://reactnavigation.org/docs/drawer-navigator#installation
+npx expo install react-native-gesture-handler react-native-reanimated
+npm install @react-navigation/drawer

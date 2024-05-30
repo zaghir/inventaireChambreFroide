@@ -6,7 +6,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function RayonSreen({ navigation, route }) {
 
-  navigation.setOptions({ headerTitle: 'Rayon' });
+  // navigation.setOptions({ headerTitle: 'Rayon' });
 
   const { depot, allee } = route.params;
 
@@ -39,6 +39,14 @@ export default function RayonSreen({ navigation, route }) {
     );
   };
 
+  onSuivant = () => {
+    if (value === null || value === '') {
+      return;
+    }
+    console.log('Rayon ===>', value);
+    navigation.navigate('NiveauScreen', { depot, allee, rayon: value });
+  }
+
   return (
 
     <View >
@@ -68,7 +76,7 @@ export default function RayonSreen({ navigation, route }) {
         )}
         renderItem={renderItem}
       />
-      <Button title="Suivant" onPress={() => navigation.navigate('NiveauScreen', { depot, allee, rayon: value })} />
+      <Button title="Suivant" onPress={() => onSuivant()} />
 
     </View>
   );

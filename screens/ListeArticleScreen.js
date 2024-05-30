@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native';
 
 export default function ListeArticleSreen({ navigation , route }) {
 
-  navigation.setOptions({ headerTitle: 'Liste Articles' });
+  // navigation.setOptions({ headerTitle: 'Liste Articles' });
 
   const { depot, allee, rayon , niveau } = route.params;
 
@@ -12,7 +12,8 @@ export default function ListeArticleSreen({ navigation , route }) {
       <Text>Vous etes sur </Text>
       <Text>{depot.label} - {allee.label} - {rayon.label} - {niveau.label}</Text>
       <Text>Ajouter les articles</Text>
-      <Button title="Suivant" onPress={() => navigation.navigate('EntrepotScreen')} />
+      <Button title="Enregistrer" onPress={() => navigation.popToTop()} />
+      <Button title="Annuler" onPress={() => navigation.popToTop()} />
     </View>
   );
 }

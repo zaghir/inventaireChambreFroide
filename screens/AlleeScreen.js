@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function AlleeSreen({ navigation , route }) {
 
-  navigation.setOptions({ headerTitle: 'Allee' });
+  // navigation.setOptions({ headerTitle: 'Allee' });
 
   const { depot } = route.params;
 
@@ -39,6 +39,14 @@ export default function AlleeSreen({ navigation , route }) {
   };
 
 
+  onSuivant = () => {
+    if (value === null || value === '') {
+      return;
+    }
+    console.log('allee ===>', value);
+    navigation.navigate('RayonScreen', { depot, allee: value });
+  }
+
   return (
     <View>
       <Text>Vous etes sur </Text>
@@ -67,7 +75,7 @@ export default function AlleeSreen({ navigation , route }) {
         )}
         renderItem={renderItem}
       />
-      <Button title="Suivant" onPress={() => navigation.navigate('RayonScreen',  { depot , allee: value })} />
+      <Button title="Suivant" onPress={() => onSuivant()} />
     </View>
   );
 }

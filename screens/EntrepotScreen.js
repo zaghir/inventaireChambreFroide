@@ -5,7 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 const EntrepotScreen = ({ navigation }) => {
 
-  navigation.setOptions({ headerTitle: 'Entrepot' });
+  // navigation.setOptions({ headerTitle: 'Entrepot' });
 
   const [value, setValue] = useState(null);
 
@@ -36,6 +36,14 @@ const EntrepotScreen = ({ navigation }) => {
     );
   };
 
+  onSuivant = () => {
+    if (value === null || value === '') {
+      return;
+    }
+    console.log('Entrepot ===>', value);
+    navigation.navigate('AlleeScreen', { depot: value })
+  }
+
   return (
     /*<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>*/
     <View>
@@ -62,7 +70,7 @@ const EntrepotScreen = ({ navigation }) => {
         )}
         renderItem={renderItem}
       />
-      <Button title="Suivant" onPress={() => navigation.navigate('AlleeScreen', { depot: value })} />
+      <Button title="Suivant" onPress={() => onSuivant()} />
     </View>
   );
 };
